@@ -1,0 +1,10 @@
+@import 'src/common/colors.scss';
+
+.root {
+  width: 375px;
+
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: $color-background;
+  overflow: hidden;
+}

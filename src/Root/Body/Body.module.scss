@@ -1,0 +1,9 @@
+@import 'src/common/colors.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  width: 100%;
+  margin: 6px 0;
+}
