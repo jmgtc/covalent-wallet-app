@@ -5,7 +5,7 @@ import { Card, Elevation } from '@blueprintjs/core';
 
 export const BalanceItem: React.FC<{ item: Contract }> = ({ item }) => {
   return (
-    <Card className={styles.root} elevation={Elevation.TWO}>
+    <Card className={styles.root} elevation={Elevation.ZERO}>
       <div className={styles.balanceInfo}>
         <div className={styles.logo}>
           <img

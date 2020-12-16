@@ -1,9 +1,22 @@
 @import 'src/common/colors.scss';
 
 .root {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   min-height: 480px;
   width: 100%;
-  margin: 6px 0;
+  margin: 0 0 6px 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.balanceItems {
+  min-height: 480px;
+  width: 100%;
+  margin: 0 0 6px 0;
 }

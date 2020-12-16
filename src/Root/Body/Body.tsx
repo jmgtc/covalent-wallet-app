@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Body.module.scss';
-import { useAsyncFn } from 'react-use';
-import { getAddressBalance } from '../../api/getAddressBalance';
 import { BalanceItem } from './BalanceItem/BalanceItem';
-import { Intent, Spinner } from '@blueprintjs/core';
-import { Loader } from '../../common/Loader/Loader';
+import { AddressInput } from './AddressInput/AddressInput';
+import { AccountEditOverlay } from './AccountEditOverlay/AccountEditOverlay';
 
+export type Balances = {
+  address: string;
+  items: Contract[];
+};
 export type Contract = {
   balance: string;
   contract_address: string;
@@ -19,27 +21,43 @@ export type Contract = {
   type: string;
 };
 
+const BodyContent: React.FC<{
+  balances: Balances;
+  showOverlay: () => void;
+}> = ({ balances, showOverlay }) => {
+  return (
+    <div className={styles.wrapper}>
+      <AddressInput address={balances.address} showOverlay={showOverlay} />
+      <div className={styles.balanceItems}>
+        {balances.items.map((item: Contract) => (
+          <BalanceItem item={item} key={item.contract_address} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const Body: React.FC = () => {
-  const address = '0xb392b1b6ab28016a019bae72f6cb7b18145b219e';
-  const [state, fetch] = useAsyncFn(async () => {
-    const result = await getAddressBalance(address);
-    console.log(result.data.data);
-    return result.data.data;
-  }, [address]);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(true);
+  const [balances, setBalances] = useState<any>();
 
   return (
     <div className={styles.root}>
-      {state.loading && <Loader />}
-      {!state.loading && state.error && <div>Error</div>}
-      {/* {state.value && JSON.stringify(state.value)} */}
-      {!state.loading &&
-        !state.error &&
-        state.value &&
-        state.value.items.map((item: Contract) => (
-          <BalanceItem item={item} key={item.contract_address} />
-        ))}
-      Covallet
-      <button onClick={fetch}>get balance</button>
+      {balances && balances.items && (
+        <BodyContent
+          balances={balances}
+          showOverlay={() => {
+            setIsOverlayVisible(true);
+          }}
+        />
+      )}
+      {isOverlayVisible && (
+        <AccountEditOverlay
+          setBalances={setBalances}
+          balances={balances}
+          hideOverlay={() => setIsOverlayVisible(false)}
+        />
+      )}
     </div>
   );
 };

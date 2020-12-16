@@ -1,0 +1,14 @@
+@import 'src/common/colors';
+
+.root {
+  max-width: 140px;
+  margin: 16px 0 4px;
+  display: flex;
+}
+
+.address {
+  background-color: $color-blue-light;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
