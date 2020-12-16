@@ -20,8 +20,17 @@ export const Loan: React.FC<{ provider: any; providerName: string }> = ({
   provider,
   providerName,
 }) => {
+  const providerAppUrl =
+    provider === 'aave'
+      ? 'https://app.aave.com/'
+      : 'https://app.compound.finance/';
   return (
-    <div className={styles.root}>
+    <a
+      className={styles.root}
+      href={providerAppUrl}
+      target="_blank"
+      rel="noreferrer"
+    >
       <Tooltip className={styles.logo} content={provider.token.contract_name}>
         <img
           className={styles.logoImg}
@@ -32,6 +41,6 @@ export const Loan: React.FC<{ provider: any; providerName: string }> = ({
       {providerName === 'aave'
         ? display(provider.supply_apy, provider.stable_borrow_apr)
         : display(provider.supply_apr, provider.borrow_apr)}
-    </div>
+    </a>
   );
 };
