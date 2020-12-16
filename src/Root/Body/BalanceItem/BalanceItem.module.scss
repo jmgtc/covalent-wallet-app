@@ -4,6 +4,15 @@
   width: 100%;
 }
 
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.balanceDesc {
+}
+
 .logo {
   max-width: 36px;
   max-height: 36px;

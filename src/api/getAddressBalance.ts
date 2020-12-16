@@ -1,11 +1,4 @@
-import axios from 'axios';
-
-const client = axios.create({
-  auth: {
-    username: 'ckey_f1fbf169cdc04b9dbb6ceea07af',
-    password: ''
-  }
-})
+import { client } from "./client";
 
 export const getAddressBalance = async (address: string, withNft: boolean = false) => {
   console.log('getAddressBalance',address);
