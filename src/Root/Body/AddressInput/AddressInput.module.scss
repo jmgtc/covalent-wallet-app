@@ -12,3 +12,13 @@
   border-radius: 3px;
   cursor: pointer;
 }
+
+.editButton {
+  visibility: hidden;
+}
+
+.address:hover {
+  + .editButton {
+    visibility: visible;
+  }
+}

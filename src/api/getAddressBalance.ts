@@ -8,6 +8,7 @@ const client = axios.create({
 })
 
 export const getAddressBalance = async (address: string, withNft: boolean = false) => {
+  console.log('getAddressBalance',address);
   try {
     const result = await client.get(`https://api.covalenthq.com/v1/1/address/${address}/balances_v2/?nft=${withNft ? 'true' : 'false'}`)
     console.log(result.data.data);

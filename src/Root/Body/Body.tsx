@@ -51,13 +51,13 @@ export const Body: React.FC = () => {
           }}
         />
       )}
-      {isOverlayVisible && (
+      <div style={{ display: isOverlayVisible ? 'block' : 'none' }}>
         <AccountEditOverlay
           setBalances={setBalances}
           balances={balances}
           hideOverlay={() => setIsOverlayVisible(false)}
         />
-      )}
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './AccountEditOverlay.module.scss';
 import { getAddressBalance } from '../../../api/getAddressBalance';
 import { Loader } from '../../../common/Loader/Loader';
@@ -17,20 +17,27 @@ export const AccountEditOverlay: React.FC<{
 }> = ({ setBalances, hideOverlay, balances }) => {
   const [address, setAddress] = useStateAndStorage('address', '');
   const [fetchError, setFetchError] = useState('');
+  console.log('address', address);
 
-  const [state, fetch] = useAsyncFn(async (newAddress: string) => {
-    const result = await getAddressBalance(newAddress);
+  const [state, fetch] = useAsyncFn(async (checkedAddress: string) => {
+    const result = await getAddressBalance(checkedAddress);
     console.log(result);
     if (result.status >= 200 && result.status < 300) {
       setBalances(result.data.data);
       hideOverlay();
+      setAddress(result.data.data.address);
     } else {
       setFetchError(result);
     }
   }, []);
 
+  useEffect(() => {
+    if (address) {
+      fetch(address);
+    }
+  }, [address, fetch]);
+
   const onSubmit = async (data: FormData) => {
-    setAddress(data.address);
     fetch(data.address);
   };
 
@@ -39,7 +46,7 @@ export const AccountEditOverlay: React.FC<{
     setAddress(balances.address);
   };
 
-  console.log('balances', balances);
+  // console.log('balances', balances);
   return (
     <div className={styles.root}>
       {state.loading ? (
