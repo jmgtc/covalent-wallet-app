@@ -12,3 +12,29 @@
   max-width: 100%;
   max-height: 100%;
 }
+
+.balance {
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+  outline: none;
+}
+.symbol {
+  margin-left: 10px;
+  font-size: 24/16 * 100%;
+}
+
+.quote {
+}
+.quoteMajor {
+  font-size: 24/16 * 100%;
+  font-weight: 500;
+}
+
+.quoteMinor {
+  font-size: 14/16 * 100%;
+}
+
+.fiat {
+  color: #999;
+}
