@@ -13,3 +13,10 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.link {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+}
