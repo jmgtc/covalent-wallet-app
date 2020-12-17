@@ -22,7 +22,7 @@ export const BalanceItem: React.FC<{ item: Contract; loans: any }> = ({
     loans[item.contract_ticker_symbol] &&
     loans[item.contract_ticker_symbol].comp;
 
-  console.log(aave, comp);
+  // console.log(aave, comp);
   return (
     <Card className={styles.root} elevation={Elevation.ZERO}>
       <div className={styles.top}>

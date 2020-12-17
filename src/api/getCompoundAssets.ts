@@ -22,10 +22,10 @@ export type CompoundAsset = {
 };
 
 export const getCompoundAssets = async () => {
-  console.log('getCompoundAssets');
+  // console.log('getCompoundAssets');
   try {
     const result = await client.get('https://api.covalenthq.com/v1/1/networks/compound/assets/')
-    console.log(result.data.data);
+    // console.log(result.data.data);
     return result;
   } catch (error) {
     if (error.response) {

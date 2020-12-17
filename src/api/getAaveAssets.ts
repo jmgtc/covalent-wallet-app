@@ -22,10 +22,10 @@ export type AaveAsset = {
 };
 
 export const getAaveAssets = async () => {
-  console.log('getCompoundAsset');
+  // console.log('getCompoundAsset');
   try {
     const result = await client.get('https://api.covalenthq.com/v1/1/networks/aave/assets/')
-    console.log(result.data.data);
+    // console.log(result.data.data);
     return result;
   } catch (error) {
     if (error.response) {

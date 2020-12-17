@@ -17,11 +17,11 @@ export const AccountEditOverlay: React.FC<{
 }> = ({ setBalances, hideOverlay, balances }) => {
   const [address, setAddress] = useStateAndStorage('address', '');
   const [fetchError, setFetchError] = useState('');
-  console.log('address', address);
+  // console.log('address', address);
 
   const [state, fetch] = useAsyncFn(async (checkedAddress: string) => {
     const result = await getAddressBalance(checkedAddress);
-    console.log(result);
+    // console.log(result);
     if (result.status >= 200 && result.status < 300) {
       setBalances(result.data.data);
       hideOverlay();
