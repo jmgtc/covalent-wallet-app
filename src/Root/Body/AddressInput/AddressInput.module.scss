@@ -2,23 +2,19 @@
 
 .root {
   max-width: 140px;
-  margin: 16px 0 4px;
+  margin: -14px 0 4px;
   display: flex;
+  padding: 0;
 }
 
 .address {
-  background-color: $color-blue-light;
+  background-color: $color-white;
   padding: 4px 8px;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .editButton {
-  visibility: hidden;
-}
-
-.address:hover {
-  + .editButton {
-    visibility: visible;
-  }
+  height: 26px;
+  min-height: 26px;
 }

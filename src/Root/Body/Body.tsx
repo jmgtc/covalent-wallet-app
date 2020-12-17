@@ -55,7 +55,7 @@ const mergeAssets = (
   const aaveMap = groupByTickerSymbol(aaveAssets, 'aave', 'atoken');
   const compoundMap = groupByTickerSymbol(compoundAssets, 'comp', 'ctoken');
 
-  console.log(aaveMap, compoundMap);
+  // console.log(aaveMap, compoundMap);
   return merge(aaveMap, compoundMap);
 };
 
@@ -86,7 +86,7 @@ const BodyContent: React.FC<{
     aaveAssets.value &&
     compoundAssets.value &&
     mergeAssets(aaveAssets.value, compoundAssets.value);
-  console.log(balances, loans);
+  // console.log(balances, loans);
 
   return (
     <div className={styles.wrapper}>

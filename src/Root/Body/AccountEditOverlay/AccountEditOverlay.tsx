@@ -9,6 +9,7 @@ import { Button } from '@blueprintjs/core/lib/esm/components/button/buttons';
 import { useAsyncFn } from 'react-use';
 import { FormData } from './AddressForm/AddressForm';
 import { Balances } from '../Body';
+import { Header } from '../../Header/Header';
 
 export const AccountEditOverlay: React.FC<{
   setBalances: (balances: any) => void;
@@ -49,6 +50,7 @@ export const AccountEditOverlay: React.FC<{
   // console.log('balances', balances);
   return (
     <div className={styles.root}>
+      <Header />
       {state.loading ? (
         <Loader />
       ) : fetchError ? (
