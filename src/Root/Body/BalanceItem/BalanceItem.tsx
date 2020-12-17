@@ -34,6 +34,8 @@ export const BalanceItem: React.FC<{ item: Contract; loans: any }> = ({
                   className={styles.logoImg}
                   src={item.logo_url}
                   alt={item.contract_name}
+                  width={36}
+                  height={36}
                 />
               </div>
               <div className={styles.symbol} title={item.contract_name}>
