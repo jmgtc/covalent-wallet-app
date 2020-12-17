@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/covalent-wallet-app/static/css/main.4c7ef1d1.chunk.css",
+    "main.css": "/covalent-wallet-app/static/css/main.98b23f5a.chunk.css",
     "main.js": "/covalent-wallet-app/static/js/main.60bc207e.chunk.js",
     "main.js.map": "/covalent-wallet-app/static/js/main.60bc207e.chunk.js.map",
     "runtime-main.js": "/covalent-wallet-app/static/js/runtime-main.565a4e18.js",
@@ -12,7 +12,7 @@
     "static/js/3.fb6621c6.chunk.js.map": "/covalent-wallet-app/static/js/3.fb6621c6.chunk.js.map",
     "index.html": "/covalent-wallet-app/index.html",
     "static/css/2.b85618d7.chunk.css.map": "/covalent-wallet-app/static/css/2.b85618d7.chunk.css.map",
-    "static/css/main.4c7ef1d1.chunk.css.map": "/covalent-wallet-app/static/css/main.4c7ef1d1.chunk.css.map",
+    "static/css/main.98b23f5a.chunk.css.map": "/covalent-wallet-app/static/css/main.98b23f5a.chunk.css.map",
     "static/js/2.4b314d29.chunk.js.LICENSE.txt": "/covalent-wallet-app/static/js/2.4b314d29.chunk.js.LICENSE.txt",
     "static/media/covalent-logo.96c70c5c.png": "/covalent-wallet-app/static/media/covalent-logo.96c70c5c.png",
     "static/media/blueprint-icons.css": "/covalent-wallet-app/static/media/icons-20.cde033c5.eot"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.565a4e18.js",
     "static/css/2.b85618d7.chunk.css",
     "static/js/2.4b314d29.chunk.js",
-    "static/css/main.4c7ef1d1.chunk.css",
+    "static/css/main.98b23f5a.chunk.css",
     "static/js/main.60bc207e.chunk.js"
   ]
 }
